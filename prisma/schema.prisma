@@ -26,7 +26,7 @@ model Project {
 model Resource {
   id String @id @default(uuid())
   name String
-  ammount Int
+  amount Int
 
   project_id String
   project   Project   @relation(fields: [project_id], references: [id])
