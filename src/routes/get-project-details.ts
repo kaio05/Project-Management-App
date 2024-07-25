@@ -23,7 +23,7 @@ export async function getProjectDetails(app: FastifyInstance) {
         })
 
         if (!project) {
-            throw new Error('Trip not found')
+            throw new Error('Project not found')
         }
 
 

@@ -9,6 +9,7 @@ import { getResources } from './routes/get-resources';
 import { createComponent } from './routes/create-component';
 import { getComponents } from './routes/get-components';
 import { updateProject } from './routes/update-project';
+import { getProjects } from './routes/get-projects';
 
 const app = fastify()
 
@@ -26,6 +27,7 @@ app.register(getResources)
 app.register(createComponent)
 app.register(getComponents)
 app.register(updateProject)
+app.register(getProjects)
 
 app.listen({ port: env.PORT }, () => {
     console.log(`Server listening at ${env.PORT}`)
