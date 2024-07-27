@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "tsx watch --env-file .env src/server.ts"
+    "dev": "tsx watch --env-file ./.env src/server.ts"
   },
   "keywords": [],
   "author": "",
