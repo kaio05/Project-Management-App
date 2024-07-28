@@ -32,11 +32,29 @@ function Project() {
         </div>
       ))
 
+    const [components, setComponents] = useState([{id: '', name: '', email: '', project_id: ''}]);
+    useEffect(() => {
+        axios.get(`${env.VITE_REACT_APP_BASE_URL}:${env.VITE_REACT_APP_PORT}/projects/${handle}/components`)
+        .then(response => {
+            setComponents(response.data.components);
+        })
+    }, [handle]);
+
+    const projectComponents = components.map(component => (
+        <div key={component.id} className='resource'>
+          <span>{component.name}</span>
+          <span>{component.email}</span>
+        </div>
+    ))
+
     return (
         <>
             <h1>{name}</h1>
             <div>
                 {projectResources}
+            </div>
+            <div>
+                {projectComponents}
             </div>
             <Button redirect='/projects' title='Return' />
         </>
